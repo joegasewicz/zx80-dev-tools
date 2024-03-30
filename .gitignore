@@ -1,0 +1,9 @@
+.idea
+cmake-build-debug
+sjasmplus
+books
+files
+tap_files
+*.bin
+*.sna
+zmakebas-1.5.2
