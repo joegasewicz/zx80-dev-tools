@@ -16,7 +16,7 @@ make build
 
 ### Using Z80 Assembly
 Place your Assembly code in the `src` directory.
-You can run each individual step or the assembly with:
+You can run each individual step to assemble with:
 ```
 make clean
 make assemble
