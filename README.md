@@ -41,6 +41,6 @@ Or use a single command to run all the above:
 ```
 make run_basic:
 ```
-This will create a `.tap` file from your NEXR Basic code & open the Zesarux emulator.
+This will create a `.tap` file from your NEXT Basic code & open the Zesarux emulator.
 Currently, it only loads the output `.tap` file, You will have to load the file manually
 within the Zesarux emulator. 
