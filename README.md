@@ -1,7 +1,7 @@
 # Z80 MacOS Starter Template
 ZX80 NEXT development tools for MacOS
 
-![Alt Text](images/example1.gif)
+![Alt Text](images/example2.gif)
 
 ### Requirements
 1. Download [Z88DK](https://github.com/z88dk/z88dk/releases)
