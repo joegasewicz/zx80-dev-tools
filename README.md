@@ -1,9 +1,10 @@
 # Z80 MacOS Starter Template
 ZX80 NEXT development tools for MacOS
 
-1. Download & install Z88DK
-2. Download & install Zesarux
-3. Download & install sjasmplus 
+### Requirements
+1. Download & install [Z88DK](https://github.com/z88dk/z88dk/releases)
+2. Download & install [Zesarux](https://github.com/chernandezba/zesarux/releases/tag/ZEsarUX-X)
+3. Download & install [sjasmplus](https://github.com/z00m128/sjasmplus/blob/master/INSTALL.md#default-method-for-gnulinux--unix--macos--bsd)
 ```
 git clone --recursive -j8 https://github.com/z00m128/sjasmplus.git 
 ```
