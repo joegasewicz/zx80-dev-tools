@@ -22,7 +22,7 @@ emulator:
 	$(ZESARUX)
 
 run_snapshot:
-	$(ZESARUX) --machine TBBlue --snap $(NEX_FILE) --verbose 1
+	$(ZESARUX) --nowelcomemessage --disableborder --disablefooter --machine TBBlue --snap $(NEX_FILE) --verbose 1
 
 clean:
 	$(RM) *.bin
