@@ -43,4 +43,21 @@ make run_basic:
 ```
 This will create a `.tap` file from your NEXT Basic code & open the Zesarux emulator.
 Currently, it only loads the output `.tap` file, You will have to load the file manually
-within the Zesarux emulator. 
+within the Zesarux emulator.
+
+### CSpect
+To get CSpect running on MacOS with an M1, M2 chip you will need to follow
+these steps:
+1. Download [ITerm2](https://iterm2.com/downloads.html)
+2. Goto Applications, 
+   - Right click on Iterm2 & click `Duplicate`.
+   - Rename to `Iterm2 x86_64`
+   - Now open the Iterm2 x86_64 terminal
+3. Install Rosetta - `softwareupdate --install-rosetta`
+4. Install brew (this will install a new version of brew to `/usr/local`)
+5. Install Mono - `arch -x86_64 brew install mono`
+6. Download [CSpect](https://mdf200.itch.io/cspect)
+7. You will also need a ZX Spectrum NEXT image [here](https://zxspectrumnext.online/cspect/)
+    - Select an image from **CURRENT DISTRO IMAGES** section.
+    - Place this image in your CSpect root folder.
+8. Run CSpect `mono cspect.exe -zxnext -nextrom -mmc=cspect-next-2gb.img`
