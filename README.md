@@ -61,3 +61,11 @@ these steps:
     - Select an image from **CURRENT DISTRO IMAGES** section.
     - Place this image in your CSpect root folder.
 8. Run CSpect `mono cspect.exe -zxnext -nextrom -mmc=cspect-next-2gb.img`
+
+### Run CSpect
+Once you have the followed the above steps, you can now use the following commands
+
+#### Run CSpect
+```
+sh cspect.sh
+```
