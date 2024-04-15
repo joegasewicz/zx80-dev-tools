@@ -52,6 +52,7 @@ these steps:
 2. Goto Applications, 
    - Right click on Iterm2 & click `Duplicate`.
    - Rename to `Iterm2 x86_64`
+   - Still in Applciations folder, Left click on the `Iterm2 x86_64` icon & select `Get Info` & check the *Open using Rosetta* option.
    - Now open the Iterm2 x86_64 terminal
 3. Install Rosetta - `softwareupdate --install-rosetta`
 4. Install brew (this will install a new version of brew to `/usr/local`)
