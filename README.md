@@ -70,3 +70,7 @@ Once you have the followed the above steps, you can now use the following comman
 ```
 sh cspect.sh
 ```
+
+### Routines
+https://skoolkid.github.io/rom/maps/routines.html
+http://z80-heaven.wikidot.com/

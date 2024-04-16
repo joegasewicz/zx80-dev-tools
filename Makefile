@@ -1,8 +1,8 @@
 ZESARUX=/Applications/zesarux.app/Contents/MacOS/zesarux
-NEX_FILE=/Users/joegoose/CLionProjects/macos-z80-starter-template/snapshotname.sna
-INDEX=/Users/joegoose/CLionProjects/macos-z80-starter-template/src/index.asm
-BAS_ROOT=/Users/joegoose/CLionProjects/macos-z80-starter-template/basic/index.bas
-TAP_OUT=/Users/joegoose/CLionProjects/macos-z80-starter-template/tap_files/build.tap
+NEX_FILE=/Users/joegasewicz/CLionProjects/alien_planet/alien_planet.sna
+INDEX=/Users/joegasewicz/CLionProjects/alien_planet/src/index.asm
+BAS_ROOT=/Users/joegasewicz/CLionProjects/alien_planet/basic/index.bas
+TAP_OUT=/Users/joegasewicz/CLionProjects/alien_planet/tap_files/build.tap
 ZMAKEBAS=zmakebas-1.5.2/zmakebas
 
 build:
@@ -25,6 +25,7 @@ run_snapshot:
 	$(ZESARUX) --nowelcomemessage --disableborder --disablefooter --machine TBBlue --snap $(NEX_FILE) --verbose 1
 
 clean:
+	$(RM) *.sna
 	$(RM) *.bin
 
 assemble:
