@@ -74,3 +74,4 @@ sh cspect.sh
 ### Routines
 https://skoolkid.github.io/rom/maps/routines.html
 http://z80-heaven.wikidot.com/
+https://www.youtube.com/watch?v=gTOGG3taJJo&list=PLh-C9eJOIMBtOyDGJIEJq7fiHLjkhcZOv&index=2# alien-planet
