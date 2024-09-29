@@ -6,5 +6,8 @@ files
 tap_files
 *.bin
 *.sna
+*.tap
 zmakebas-1.5.2
 libs
+*/venv
+apps

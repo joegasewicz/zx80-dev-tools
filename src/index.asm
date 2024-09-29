@@ -31,5 +31,7 @@ STR_LEN         db 11
     ;return to our virtual device:
     DEVICE ZXSPECTRUM128
 
-    SAVESNA "alien_planet.sna", Start
+    SAVESNA "build.sna", Start
+    SAVETAP "build.tap", Start
+
     ;SAVENEX OPEN "project1.nex", Main, $ff40
