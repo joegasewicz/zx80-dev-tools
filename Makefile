@@ -2,7 +2,7 @@ ZESARUX=/Applications/zesarux.app/Contents/MacOS/zesarux
 FUSE=/Applications/Fuse.app/Contents/MacOS/Fuse
 NEX_FILE=$(abspath .)/build.sna
 TAP_FILE=$(abspath .)/build.tap
-INDEX=$(abspath .)/src/text_mover.asm
+INDEX=$(abspath .)/src/main.asm
 BAS_ROOT=$(abspath .)/basic/index.bas
 TAP_OUT=$(abspath .)/tap_files/build.tap
 ZMAKEBAS=zmakebas-1.5.2/zmakebas
@@ -32,16 +32,17 @@ install:
 	make python_script
 
 build:
+	$(RM) *.tap
 	PATH=${PATH}:/Users/joegasewicz/CLionProjects/zx80-dev-tools/apps/z88dk/bin \
 	&& ZCCCFG=/Users/joegasewicz/CLionProjects/zx80-dev-tools/apps/z88dk/lib/config \
-	&& $(ZCC) +zx -vn main.c -o main.bin -lndos
-	$(ZESARUX)
+	&& $(ZCC) +zx -vn -clib=sdcc_iy -startup=31 main.c -o main.bin -create-app
+	$(FUSE) $(abspath .)/main.tap
 
 build-fuse:
 	PATH=${PATH}:/Users/joegasewicz/CLionProjects/zx80-dev-tools/apps/z88dk/bin \
 	&& ZCCCFG=/Users/joegasewicz/CLionProjects/zx80-dev-tools/apps/z88dk/lib/config \
 	&& $(ZCC) +zx -vn main.c -o main.bin -lndos
-	$(FUSE)
+	$(FUSE) $(abspath .)/main.tap
 
 help:
 	$(ZESARUX) --help
@@ -68,7 +69,6 @@ run_snapshot_fuse:
 	chmod -R 755 $(NEX_FILE) \
 	&& $(FUSE) $(NEX_FILE)
 
-
 run_tap_fuse:
 	chmod -R 755 $(TAP_FILE) \
 	&& $(FUSE) $(TAP_FILE)
@@ -76,9 +76,11 @@ run_tap_fuse:
 clean:
 	$(RM) *.sna
 	$(RM) *.bin
+	$(RM) *.tap
 
 assemble:
-	sjasmplus $(INDEX) --zxnext=cspect
+	sjasmplus $(INDEX)
+	#sjasmplus $(INDEX) --zxnext=cspect
 
 
 assemble-fuse:
@@ -93,7 +95,7 @@ run_assembly:
 run_assembly-fuse:
 	make clean
 	make assemble-fuse
-	make run_snapshot_fuse
+	make run_tap_fuse
 
 zmake_help:
 	$(ZMAKEBAS) -h

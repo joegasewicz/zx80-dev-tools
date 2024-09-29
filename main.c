@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <arch/zx.h>
+
 
 int main() {
-    printf("Hello, World!\n");
+    zx_cls(PAPER_WHITE);
+
     return 0;
 }
