@@ -3,7 +3,17 @@ ZX80 NEXT development tools for MacOS
 
 ![Alt Text](images/example2.gif)
 
-### Requirements
+
+### Install Requirements
+You must have virtualenv installed, if not run `brew install virtualenv`
+To install the compilers & emulator run the following:
+
+*(You will be prompted to input your user password)*
+```
+make install  # and follow the installation instructions
+```
+
+### Install Requirements Manually
 1. Download [Z88DK](https://github.com/z88dk/z88dk/releases)
 2. Download [Zesarux](https://github.com/chernandezba/zesarux/releases/tag/ZEsarUX-X)
 3. Download [sjasmplus](https://github.com/z00m128/sjasmplus/blob/master/INSTALL.md#default-method-for-gnulinux--unix--macos--bsd)
