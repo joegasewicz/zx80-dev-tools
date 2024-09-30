@@ -13,13 +13,15 @@ To install the compilers & emulator run the following:
 make install  # and follow the installation instructions
 ```
 
-### Install Requirements Manually
+### Installs the following requirements
 1. Download [Z88DK](https://github.com/z88dk/z88dk/releases)
 2. Download [Zesarux](https://github.com/chernandezba/zesarux/releases/tag/ZEsarUX-X)
 3. Download [sjasmplus](https://github.com/z00m128/sjasmplus/blob/master/INSTALL.md#default-method-for-gnulinux--unix--macos--bsd)
+4. Fuse
 
 ### Using C Language
-Place code in the `main.c` file & use the following command to compile
+Place code in the `main.c` file & use the following command to compile &
+runs the output .tap file in the Fuse emulator.
 ```
 make build
 ```
