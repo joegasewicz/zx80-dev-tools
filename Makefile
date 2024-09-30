@@ -10,9 +10,9 @@ ZCC=$(abspath .)/apps/z88dk/bin/zcc
 
 python_script:
 	cd scripts \
-	&& virtualenv venv \ \
-	&& pip install
-	&& source venv/bin/activate -r requirements.txt \
+	&& virtualenv venv \
+	&& source venv/bin/activate \
+	&& pip install -r requirements.txt \
 	&& python zx_tools.py \
 	&& cd ../apps/z88dk \
    	&& chmod -R 755 bin/*
@@ -28,6 +28,8 @@ install_sjasmplus:
 	&& sudo -S make install
 
 install:
+	rm -rf apps
+	mkdir apps
 	make install_sjasmplus
 	make python_script
 
