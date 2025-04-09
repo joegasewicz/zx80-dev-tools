@@ -1,26 +1,30 @@
-    DEVICE ZXSPECTRUM128
+    DEVICE ZXSPECTRUM48
     ; in this device the default slot is SLOT 3 with PAGE 0 paged in.
 
     ORG $8000
 
-ENTRY_POINT     equ 32768           ; start of the empty spacve in memory RAM
-
-ROM_PRINT       equ $15ef
+ENTRY_POINT     equ 32768       ; start of the empty spacve in memory RAM
 ROM_CHAN_OPEN   equ $1601
 
 Start:
-                ld a, 2                     ; screen channel?
-                call ROM_CHAN_OPEN          ; opends channel which was specified in a
+    ld a, 2                     ; ld the screen channel value of 2 into the accumulator
+    call ROM_CHAN_OPEN          ; open channel 2
 
+loop:
+    ld de, HelloStr             ; loads the address of the HelloStr into the DE register pair.
+    call PrintString            ; jump to PrintString subroutine
+    jp loop                     ; unconditionally jump to the loop
 
-loopforever:
-                ld de, STR_LEN
-                ld bc, 11
-                call ROM_PRINT              ; call print
-                jp loopforever              ; jump back to loopforever label
+PrintString:
+    ld a, (de)                  ; load char address at DE into A
+    cp 0                        ; Id it 0? (null terminator)
+    ret z                       ; If yes, return (stop printing)
+    rst 16                      ; Else, print the character in A
+    inc de                      ; Move to the next char
+    jr  PrintString             ; repeat
 
-HELLO_STR       db "Hello World!"
-STR_LEN         db 11
+HelloStr:
+    db "GetReady!", 13, 0       ; define bytes for string, move to a new line, null terminator
 
 
     DEVICE NONE
@@ -29,9 +33,9 @@ STR_LEN         db 11
     ;...code...
 
     ;return to our virtual device:
-    DEVICE ZXSPECTRUM128
+    DEVICE ZXSPECTRUM48
 
-    SAVESNA "build.sna", Start
-    SAVETAP "build.tap", Start
+    SAVESNA "build.sna", ENTRY_POINT
+    SAVETAP "build.tap", ENTRY_POINT
 
     ;SAVENEX OPEN "project1.nex", Main, $ff40
