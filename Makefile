@@ -84,10 +84,8 @@ assemble:
 	sjasmplus $(INDEX)
 	#sjasmplus $(INDEX) --zxnext=cspect
 
-
 assemble-fuse:
 	sjasmplus $(INDEX)
-
 
 run_assembly:
 	make clean
